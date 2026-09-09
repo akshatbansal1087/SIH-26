@@ -3,40 +3,42 @@
 ## High-level flow
 
 ```text
-User
-  |
-  v
-Frontend
-  |
-  v
-Backend API
-  |
-  +------------------> Database
-  |
-  v
-Machine Learning Model
-  |
-  v
-Prediction / Result
-  |
-  v
-Frontend
+             User
+              |
+              v
+Satellite Data Archive (HDF5)
+              |
+              v
+  +-----------------------+
+  |                       |
+  v                       v
+Ch.0 (BT/IR Image)     Ch.2 (Raw Visible Image)
+  |                       |
+  v                       v
+Branch A (Swin-T)      Branch B (EfficientNet-B0)
+  |                       |
+  +-----------+-----------+
+              |
+              v
+       Late Fusion (MLP)
+              |
+              v
+ Intensity (Estimated Wind Speed)
 ```
 
 ## Components
 
-### Frontend
-Handles user interaction, input collection, and display of results.
+### Data Ingestion
+Utilizes an optimized h5py DataLoader with persistent handles and multi-processing to ingest multidimensional satellite arrays and extract IR and Raw Visible channels.
 
-### Backend API
-Receives requests, validates input, and coordinates application logic.
+### Branch A (Swin-T)
+Utilizes a Swin Transformer (Tiny) to process Brightness Temperature (IR) satellite imagery and capture global thermal gradients.  
 
-### Machine Learning Model
+### Branch B (EfficientNet)
+Employs an EfficientNet-B0 model to process RAW Visible satellite imagery to extract localized cloud structures and textures.  
+
+### Late Fusion MLP
 Processes the input data and generates a prediction.
 
-### Database
-Stores application data such as users, submissions, or prediction history.
-
-## For your own project
-
-Update this document to show the actual components and data flow of your project. A hardware project can replace these components with sensors, microcontrollers, communication modules, cloud services, and actuators as appropriate.
+### Optimization & Inference Engine
+Handles hardware efficiency and error reduction by utilizing mixed-precision (FP16) training, Huber Loss for outlier resilience, and Test-Time Augmentation (TTA) during live inference to output exact continuous wind speed in knots.  
