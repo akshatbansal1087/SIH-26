@@ -1,2 +1,5 @@
-fastapi
-uvicorn
+streamlit
+torch
+torchvision
+huggingface_hub
+numpy
