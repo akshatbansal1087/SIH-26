@@ -1,16 +1,12 @@
-# SIH 2026 Project Repository Template
-
-This repository is a **reference template for SIH 2026 teams**. Students can use this structure for their own project repository before submitting the GitHub link.
-
-Replace all sample content with your actual project information.
+# SIH 2026 Project
 
 ## 1. Project Information
 
-- **Project Title:** CropGuard – AI Crop Disease Detection
-- **PS ID:** SIH2026-DEMO-001
-- **PS Title:** AI-based crop disease detection and advisory system
+- **Project Title:** N.E.T.R.A. – Neural Engine for Tropical Recognition and Analysis
+- **PS ID:** SIH26070
+- **PS Title:**  To develop an AI/ML based system for identification, classification, and prediction of different tropical cyclone patterns using multi-source satellite data.
 - **Category:** Software
-- **Theme:** Smart Agriculture
+- **Theme:** Disaster Management
 
 ## 2. Problem Statement
 
@@ -18,64 +14,69 @@ Farmers may have difficulty identifying crop diseases at an early stage. Manual 
 
 ## 3. Proposed Solution
 
-CropGuard allows a user to upload a crop image. The backend processes the image using a machine-learning model, predicts the likely disease, and returns basic advisory information.
+Forecasting cyclones manually is too slow and risky, so we need an AI system that instantly crunches satellite data to spot, categorize, and track these storms before they strike.
 
 ## 4. Key Features
 
-- Crop image upload
-- Disease prediction
-- Confidence score
-- Advisory information
-- Prediction history
+- Multi-source satellite data ingestion
+- Automated wind speed prediction
+- Mathematical error reduction
+- Instant disaster forecasting
+- Live inference deployment
 
 ## 5. Technology Stack
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: Python, FastAPI
-- Machine Learning: TensorFlow, NumPy
-- Database: PostgreSQL
-- Deployment: Docker / Cloud
+- Frontend: Streamlit, HTML, CSS, SVG
+- Backend: Python
+- Machine Learning: PyTorch (torch.amp), NumPy, OpenCV, Swin-T, EfficientNet-B0
+- Database: HDF5 (.h5) multidimensional arrays via h5py
+- Deployment / Hardware: CloudGPU (FP16 optimized) 
 
 ## 6. Architecture
 
 See [docs/architecture.md](docs/architecture.md).
 
 ```text
-User
-  |
-  v
-Frontend
-  |
-  v
-Backend API
-  |
-  +----> Database
-  |
-  v
-ML Model
-  |
-  v
-Prediction
+             User
+              |
+              v
+Satellite Data Archive (HDF5)
+              |
+              v
+  +-----------------------+
+  |                       |
+  v                       v
+Ch.0 (BT/IR Image)     Ch.2 (Raw Visible Image)
+  |                       |
+  v                       v
+Branch A (Swin-T)      Branch B (EfficientNet-B0)
+  |                       |
+  +-----------+-----------+
+              |
+              v
+       Late Fusion (MLP)
+              |
+              v
+ Intensity (Estimated Wind Speed)
 ```
 
 ## 7. Repository Structure
 
 ```text
-YOUR-SIH-PROJECT/
+SIH-26/
 ├── README.md
-├── SUBMISSION_GUIDE.md
 ├── submission/
 │   ├── PRESENTATION.md
+│   ├── TechWizards_SIH2026_Presentation.pptx
 │   └── DEMO.md
 ├── src/
-│   └── main.py
+│   └── app.py
+│   └── backend.py
 ├── docs/
 │   └── architecture.md
 ├── assets/
 │   └── screenshots/
-│       └── README.md
 ├── requirements.txt
-├── .gitignore
 └── LICENSE
 ```
 
@@ -92,47 +93,32 @@ YOUR-SIH-PROJECT/
 
 ## 8. Final Presentation
 
-Keep your final SIH presentation in the repository whenever the file size allows it.
-
-See [submission/PRESENTATION.md](submission/PRESENTATION.md) for the required format.
-
-If the PPT is too large for GitHub, use Google Drive/OneDrive and put the accessible viewer link in `submission/PRESENTATION.md`.
+[Presentation Deck (PPTX)](submission/TechWizards_SIH2026_Presentation.pptx)
 
 ## 9. Demo Video
 
-A demo video is **optional**, but recommended.
-
-Add the YouTube/Google Drive link in [submission/DEMO.md](submission/DEMO.md).
+[Watch Demo Video (Google Drive)](https://drive.google.com/file/d/1XMe3xrNfGSzVUhqXKs_Qpe06QqwuXWrR/view?usp=sharing)
 
 ## 10. Screenshots / Prototype Photos
 
-Add important screenshots or hardware/prototype photos to:
-
-`assets/screenshots/`
-
-See [assets/screenshots/README.md](assets/screenshots/README.md) for examples and naming conventions.
+[Project Dashboard](assets/screenshots/01-Dashboard.jpeg)
 
 ## 11. Installation
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_PROJECT_FOLDER>
+git clone <https://github.com/akshatbansal1087/SIH-26/>
+cd <SIH-26>
 pip install -r requirements.txt
 ```
 
 ## 12. Run
 
 ```bash
-uvicorn src.main:app --reload
+streamlit run app.py
 ```
-
-Replace these commands with the actual setup and run instructions for your project.
-
 
 ## 13. Future Scope
 
-Describe realistic improvements or extensions that can be made to the project.
-
-## Important
-
-Before submission, make sure the repository is accessible to reviewers. Do **not** upload passwords, API keys, access tokens, `.env` files containing secrets, or other confidential credentials.
+- Trajectory Tracking: Add geographic forecasting to predict the cyclone's future path.
+- Time-Series Modeling: Analyze continuous satellite image sequences to forecast rapid storm evolution once we get access to spontaneous data.
+- Additional Sensors: Integrate Sea Surface Temperature and radar data alongside the current BT and RAW imagery.
