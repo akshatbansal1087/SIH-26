@@ -84,7 +84,7 @@ SIH-26/
 
 | Item | Location |
 |---|---|
-| Source code | `src/` or your normal project folders |
+| Source code | `src/` |
 | Architecture / technical documentation | `docs/` |
 | Project screenshots / hardware photos | `assets/screenshots/` |
 | Final PPT / presentation | `submission/` |
