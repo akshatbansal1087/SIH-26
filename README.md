@@ -96,7 +96,7 @@ SIH-26/
 
 ## 8. Final Presentation
 
-[Presentation Deck (PPTX)](submission/TechWizards_SIH2026_Presentation.pptx)
+[Presentation Deck](https://drive.google.com/file/d/1C5QmsU-WvYQSqNAqFDryDQAV2HPiO4k1/view?usp=sharing)
 
 ## 9. Demo Video
 
