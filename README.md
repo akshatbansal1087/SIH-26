@@ -67,7 +67,6 @@ SIH-26/
 ├── README.md
 ├── submission/
 │   ├── PRESENTATION.md
-│   ├── TechWizards_SIH2026_Presentation.pptx
 │   └── DEMO.md
 ├── src/
 │   └── app.py
