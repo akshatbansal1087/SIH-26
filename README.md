@@ -23,6 +23,7 @@ N.E.T.R.A. allows a user to upload paired Brightness Temperature (BT) and RAW sa
 - Mathematical error reduction
 - Instant disaster forecasting
 - Live inference deployment
+- Early Warning Layer
 
 ## 5. Technology Stack
 
@@ -101,6 +102,7 @@ SIH-26/
 ## 9. Demo Video
 
 [Watch Demo Video (Google Drive)](https://drive.google.com/file/d/1XMe3xrNfGSzVUhqXKs_Qpe06QqwuXWrR/view?usp=sharing)
+[Web App Demo Timeline- 1:45 - 4:40] 
 
 ## 10. Screenshots / Prototype Photos
 
