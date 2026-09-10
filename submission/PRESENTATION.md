@@ -1,2 +1,2 @@
-## Presentation file
-- **PPT:** `[Open Final Presentation](./TechWizards_SIH2026_Presentation.pptx)`
+## Presentation File
+https://drive.google.com/file/d/1C5QmsU-WvYQSqNAqFDryDQAV2HPiO4k1/view?usp=sharing
