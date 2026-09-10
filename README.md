@@ -10,11 +10,11 @@
 
 ## 2. Problem Statement
 
-Farmers may have difficulty identifying crop diseases at an early stage. Manual identification can be slow and may depend on access to agricultural experts.
+Forecasting cyclones manually is too slow and risky, so we need an AI system that instantly crunches satellite data to spot, categorize, and track these storms before they strike.
 
 ## 3. Proposed Solution
 
-Forecasting cyclones manually is too slow and risky, so we need an AI system that instantly crunches satellite data to spot, categorize, and track these storms before they strike.
+N.E.T.R.A. allows a user to upload paired Brightness Temperature (BT) and RAW satellite images. The backend processes the images using a two-stream machine-learning model, predicts the cyclone's wind speed and classification, and returns instant intensity estimations and observation tracking history.
 
 ## 4. Key Features
 
@@ -90,6 +90,10 @@ SIH-26/
 | Final PPT / presentation | `submission/` |
 | Demo video link | `submission/DEMO.md` |
 | Project overview | `README.md` |
+
+## Deployed Web App
+
+[Access N.E.T.R.A. Web App](https://sih-26-tech-wizards.streamlit.app/)
 
 ## 8. Final Presentation
 
