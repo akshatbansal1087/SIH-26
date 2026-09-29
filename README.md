@@ -97,7 +97,7 @@ SIH-26/
 
 ## 8. Final Presentation
 
-[Presentation Deck (Google Drive)](https://drive.google.com/file/d/1M28jTjEMpP0xPRf3zvzVPnKxMkbgZuzB/view?usp=sharing)
+[Presentation Deck (Google Drive)](https://drive.google.com/file/d/1Xf-Njk_5KmfmUtxclBno9LjoqHoRmG3q/view?usp=sharing)
 
 ## 9. Demo Video
 
